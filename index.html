@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Esp-8266 by iotfrog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Esp-8266</h1>
+      <h2 class="project-tagline">Examples of use of MCU ESP8266 for integration in IoTFrog project</h2>
+      <a href="https://github.com/iotfrog/ESP-8266" class="btn">View on GitHub</a>
+      <a href="https://github.com/iotfrog/ESP-8266/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/iotfrog/ESP-8266/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h3>
+<a id="welcome-to-iotfrog-project" class="anchor" href="#welcome-to-iotfrog-project" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to IoTFrog project</h3>
+
+<p>The objecive of this project is study of develop a neuronal IoT network, based on ESP-8266, the main requisites are:</p>
+
+<ul>
+<li>Easy for end users</li>
+<li>Only need config same domain and password </li>
+<li>Remote managment using web statdard browsed (HTML5, CSS3, javascrit)</li>
+<li>Nothing to intall on remote manager device (Smatphone, PC,...)</li>
+<li>Reply of devices as Html and json</li>
+</ul>
+
+<p>You can see our web site on: <a href="https://www.iotfrog.com/">using www.IoTfrog.com</a></p>
+
+<h3>
+<a id="template-of-modules-requisites" class="anchor" href="#template-of-modules-requisites" aria-hidden="true"><span class="octicon octicon-link"></span></a>Template of Modules requisites.</h3>
+
+<p><strong>Standar petition:</strong>
+All modules has a web server and they reply to this url </p>
+
+<ul>
+<li>/ -&gt; Reply html form with menu and short descrition</li>
+<li>who -&gt; (Who) reply de the name of device by default ESP-(ID)</li>
+<li>whe -&gt; (Where) Reply where is it</li>
+<li>wha -&gt; (What) Reply a list of orders and descrition of his reply</li>
+<li>sts -&gt; (Status) Reply a list json of the status of sensor and actuattors.</li>
+<li>aba -&gt; (Abaut) Short descrition and links for help and support</li>
+<li>hlp -&gt; (help)  Reply a short guide</li>
+<li>log -&gt; (Loggin) Reply login form (Need for to do changes)</li>
+<li>tre -&gt; (Tree)  Reply description id for build a tree display (treeId, treeParentId, treeclass, and who)</li>
+<li>cfgw -&gt; (Config wifi) send html form for config SIID, Password, IP,Mask, ...</li>
+<li>cfgo -&gt; (Config other) send html form for config especific parameter of module, like email for send alarmas, time values, start stop schendule...
+<strong>Specifig module petition</strong>
+</li>
+<li>mod_xxx -&gt;(Module specific) this is the sintax prefig for petition for set   specific module values.</li>
+</ul>
+
+<p>Examples:
+mod_led?id=1&amp;val=1 -&gt; call handleLed method for set led 1 on, the reply say {led:1,val=1}
+mod_led?id=1&amp;val=0 -&gt; call handleLed method for set led 1 off
+mod_led?id=1 -&gt; call handleLed method for get status of led 1, the reply can be {led:1,val=1}
+mod_temp?id=1 -&gt; call handleTemp method for get temperature of sensor 1, the reply can be {temp:1,val:27.05,unit:C}</p>
+
+<p>set_relay?id=1&amp;val=1 -&gt; call handleRelay method for set relay 1 on</p>
+
+<p>Note: All pettition can be asqued as html or json.</p>
+
+<h3>
+<a id="creating-pages-manually" class="anchor" href="#creating-pages-manually" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating pages manually</h3>
+
+<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+
+<h3>
+<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+
+<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor’s GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+
+<h3>
+<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+
+<p>Having trouble with Pages? Check out our <a href="https://help.github.com/pages">documentation</a> or <a href="https://github.com/contact">contact support</a> and we’ll help you sort it out.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/iotfrog/ESP-8266">Esp-8266</a> is maintained by <a href="https://github.com/iotfrog">iotfrog</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
